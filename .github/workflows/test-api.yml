@@ -17,6 +17,7 @@ jobs:
         run: mvn surefire-report:report
 
       - name: Rename Report
+        if: always()
         run: mv ./target/site/surefire-report.html ./target/site/index.html
 
       - uses: actions/upload-artifact@v4
